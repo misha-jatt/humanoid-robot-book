@@ -13,7 +13,8 @@ const config: Config = {
   // Set the production url of your site here
   url: 'https://misha-jatt.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/humanoid-robot-book',
+  // Use '/' for local dev, '/humanoid-robot-book' for GitHub Pages
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   organizationName: 'misha-jatt', // Usually your GitHub org/user name.
@@ -29,6 +30,10 @@ const config: Config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  clientModules: [
+    require.resolve('./src/clientModules/injectChat.js'),
+  ],
 
   presets: [
     [

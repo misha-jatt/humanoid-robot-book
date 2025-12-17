@@ -43,6 +43,34 @@ URDF enables four critical capabilities:
 
 Without URDF, every tool would need its own format. URDF provides one standard description.
 
+```mermaid
+flowchart TB
+    subgraph Humanoid["Humanoid Robot URDF Structure"]
+        TORSO[Torso Link]
+
+        TORSO -->|shoulder joint| UARM[Upper Arm Link]
+        UARM -->|elbow joint| FARM[Forearm Link]
+        FARM -->|wrist joint| HAND[Hand Link]
+
+        TORSO -->|hip joint| ULEG[Upper Leg Link]
+        ULEG -->|knee joint| LLEG[Lower Leg Link]
+        LLEG -->|ankle joint| FOOT[Foot Link]
+
+        TORSO -->|neck joint| HEAD[Head Link]
+    end
+
+    style TORSO fill:#4CAF50
+    style UARM fill:#2196F3
+    style FARM fill:#2196F3
+    style HAND fill:#2196F3
+    style ULEG fill:#FF9800
+    style LLEG fill:#FF9800
+    style FOOT fill:#FF9800
+    style HEAD fill:#9C27B0
+```
+
+*Figure 1: A simplified humanoid robot structure showing links (boxes) and joints (connections)*
+
 ---
 
 ## Links: The Rigid Bodies

@@ -208,9 +208,3 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
-
-## Active Technologies
-- Static markdown files in `docs/` directory (Docusaurus convention) (002-digital-twin-module)
-
-## Recent Changes
-- 002-digital-twin-module: Added Static markdown files in `docs/` directory (Docusaurus convention)

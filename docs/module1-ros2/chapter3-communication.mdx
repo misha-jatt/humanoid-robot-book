@@ -33,6 +33,28 @@ ROS 2 nodes communicate in these same three ways:
 
 Each pattern solves different problems. Understanding when to use each one is key to designing effective robot systems.
 
+```mermaid
+flowchart LR
+    subgraph Topics["Topics (Streaming)"]
+        P1[Publisher] -->|continuous| T1((Topic))
+        T1 --> S1[Subscriber 1]
+        T1 --> S2[Subscriber 2]
+    end
+
+    subgraph Services["Services (Query)"]
+        C[Client] -->|request| SRV((Service))
+        SRV -->|response| C
+    end
+
+    subgraph Actions["Actions (Tasks)"]
+        AC[Action Client] -->|goal| AS((Action Server))
+        AS -->|feedback| AC
+        AS -->|result| AC
+    end
+```
+
+*Figure 1: The three ROS 2 communication patterns*
+
 ---
 
 ## Topics: Streaming Data

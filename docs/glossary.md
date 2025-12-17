@@ -4,7 +4,7 @@ title: "Glossary"
 sidebar_label: "Glossary"
 sidebar_position: 100
 description: "Definitions of key terms used throughout the Physical AI & Humanoid Robotics textbook"
-keywords: [glossary, definitions, terminology, ros2, robotics, ai]
+keywords: [glossary, definitions, terminology, ros2, robotics, ai, vla, isaac]
 ---
 
 # Glossary
@@ -22,6 +22,150 @@ This glossary defines key terms used throughout the textbook. Terms are listed a
 
 **First Introduced**: Module 1, Chapter 3
 
+### Automatic Speech Recognition (ASR)
+**Definition**: Technology that converts spoken words into text. ASR systems analyze audio waveforms to transcribe human speech.
+
+**Example**: OpenAI's Whisper is an ASR system that converts your voice command "bring me the red ball" into text that robots can process.
+
+**First Introduced**: Module 4
+
+---
+
+## B
+
+### Bipedal Locomotion
+**Definition**: Two-legged walking, as performed by humans and humanoid robots. More challenging than wheeled movement because it requires constant balance adjustments.
+
+**Example**: A humanoid robot walking across uneven terrain must constantly adjust its balance with each step, unlike a wheeled robot that remains stable.
+
+**First Introduced**: Module 3
+
+---
+
+## C
+
+### Cascading Pipeline
+**Definition**: A multi-stage processing chain where each component passes output to the next, like an assembly line.
+
+**Example**: In voice-to-action systems, audio goes through speech recognition, then language understanding, then task planning, then motion planning—each stage feeding into the next.
+
+**First Introduced**: Module 4
+
+### Client Library
+**Definition**: A software library that provides an interface for programs written in a specific language to interact with a system. Client libraries translate function calls in one language to commands the system understands.
+
+**Example**: rclpy is a client library that allows Python programs to interact with ROS 2. It translates Python function calls into ROS 2 operations like publishing messages or subscribing to topics.
+
+**First Introduced**: Module 1, Chapter 4
+
+### Cognitive Planning
+**Definition**: High-level reasoning that determines what actions to take to achieve a goal. It involves breaking down complex tasks into manageable steps.
+
+**Example**: When told "clean the room," cognitive planning breaks this into: scan environment, identify items, plan cleaning sequence, execute pick-and-place for each item.
+
+**First Introduced**: Module 4
+
+---
+
+## D
+
+### Digital Twin
+**Definition**: A virtual replica of a physical robot or environment used for simulation, testing, and training.
+
+**Example**: Before deploying a humanoid robot in a warehouse, engineers create a digital twin of both the robot and warehouse to test navigation algorithms safely.
+
+**First Introduced**: Module 2
+
+---
+
+## E
+
+### Embodied AI
+**Definition**: Artificial intelligence that interacts with the physical world through a robot body, rather than existing only in computers.
+
+**Example**: A humanoid robot that learns to fold laundry by physically practicing demonstrates embodied AI—it must understand physics, objects, and actions in the real world.
+
+**First Introduced**: Module 4
+
+### End-to-End Learning
+**Definition**: A machine learning approach where a single model handles the entire process from raw inputs to final outputs, without separate stages.
+
+**Example**: Modern VLA models process voice and camera input directly to robot actions, rather than passing through separate speech recognition and planning stages.
+
+**First Introduced**: Module 4
+
+---
+
+## F
+
+### Fault Tolerance
+**Definition**: The ability of a system to continue operating even when parts of it fail. Fault-tolerant systems isolate failures to prevent them from cascading.
+
+**Example**: In a ROS 2 humanoid robot, if the speech recognition node crashes, the robot can still walk and maintain balance because those functions run in separate nodes.
+
+**First Introduced**: Module 1, Chapter 2
+
+### Footstep Planning
+**Definition**: The process of calculating where each foot should be placed during bipedal walking, considering balance, obstacles, and terrain.
+
+**Example**: A humanoid robot navigating around furniture must plan each footstep to avoid collisions while maintaining balance.
+
+**First Introduced**: Module 3
+
+---
+
+## G
+
+### Generalist Policy
+**Definition**: A robot control system that can perform many different tasks, rather than being specialized for just one action.
+
+**Example**: A robot with a generalist policy can pick up various objects, open doors, and navigate obstacles using the same underlying AI model.
+
+**First Introduced**: Module 4
+
+### GPU (Graphics Processing Unit)
+**Definition**: A processor designed for parallel computing, originally for graphics but now widely used for AI and robotics computations.
+
+**Example**: Isaac ROS uses GPUs to process camera images at 250 frames per second—much faster than CPUs that process images sequentially.
+
+**First Introduced**: Module 3
+
+### Grounding Problem
+**Definition**: The challenge of connecting abstract language (like "that red thing") to specific physical objects a robot can perceive and interact with.
+
+**Example**: When you say "grab the cup," the robot must determine which object in its camera view corresponds to "cup"—this is the grounding problem.
+
+**First Introduced**: Module 4
+
+---
+
+## H
+
+### Hallucination
+**Definition**: When AI systems generate plausible-sounding but incorrect or impossible outputs.
+
+**Example**: An LLM might plan for a robot to "fly to the ceiling" even though the robot has no flying capability—this is a hallucination.
+
+**First Introduced**: Module 4
+
+---
+
+## I
+
+### Isaac ROS
+**Definition**: NVIDIA's collection of GPU-accelerated ROS 2 packages for robot perception, including visual SLAM and object detection.
+
+**Example**: Isaac ROS Visual SLAM processes camera images at 250 FPS, enabling robots to track their position in real-time.
+
+**First Introduced**: Module 3
+
+### Isaac Sim
+**Definition**: NVIDIA's photorealistic robot simulation platform built on RTX technology, used for training and testing robots in virtual environments.
+
+**Example**: Engineers can train a humanoid robot to walk in Isaac Sim, generating millions of practice runs without risking physical hardware.
+
+**First Introduced**: Module 3
+
 ---
 
 ## J
@@ -36,6 +180,20 @@ This glossary defines key terms used throughout the textbook. Terms are listed a
 ---
 
 ## L
+
+### Large Language Model (LLM)
+**Definition**: AI systems trained on massive text data that can understand and generate natural language. LLMs form the foundation of conversational AI and robot language understanding.
+
+**Example**: GPT-4 and Claude are LLMs that can understand complex instructions like "clean the room starting from the corner" and break them into steps.
+
+**First Introduced**: Module 4
+
+### Latency
+**Definition**: The time delay between an input (like a voice command) and the corresponding output (robot action).
+
+**Example**: Traditional voice-to-action pipelines have 1-3 seconds of latency; modern end-to-end VLA systems reduce this to 100-500ms.
+
+**First Introduced**: Module 4
 
 ### Link
 **Definition**: A rigid body part of a robot that doesn't bend or flex.
@@ -66,6 +224,13 @@ This glossary defines key terms used throughout the textbook. Terms are listed a
 
 ## N
 
+### Nav2 (Navigation2)
+**Definition**: The ROS 2 navigation stack that handles path planning and obstacle avoidance for mobile robots.
+
+**Example**: Nav2 plans both the overall route through a building and moment-by-moment steering around obstacles.
+
+**First Introduced**: Module 3
+
 ### Node
 **Definition**: An independent program that performs one specific task in a robot system. Each node runs separately and communicates with other nodes through ROS 2.
 
@@ -75,29 +240,14 @@ This glossary defines key terms used throughout the textbook. Terms are listed a
 
 ---
 
-## C
-
-### Client Library
-**Definition**: A software library that provides an interface for programs written in a specific language to interact with a system. Client libraries translate function calls in one language to commands the system understands.
-
-**Example**: rclpy is a client library that allows Python programs to interact with ROS 2. It translates Python function calls into ROS 2 operations like publishing messages or subscribing to topics.
-
-**First Introduced**: Module 1, Chapter 4
-
----
-
-## F
-
-### Fault Tolerance
-**Definition**: The ability of a system to continue operating even when parts of it fail. Fault-tolerant systems isolate failures to prevent them from cascading.
-
-**Example**: In a ROS 2 humanoid robot, if the speech recognition node crashes, the robot can still walk and maintain balance because those functions run in separate nodes.
-
-**First Introduced**: Module 1, Chapter 2
-
----
-
 ## P
+
+### Perception
+**Definition**: A robot's ability to sense and understand its environment through sensors like cameras, LiDAR, and IMUs.
+
+**Example**: Perception allows a humanoid robot to detect a chair in its path and understand that it needs to walk around it.
+
+**First Introduced**: Module 3
 
 ### Process
 **Definition**: An independent program running on a computer's operating system. Each process has its own memory space and cannot directly access another process's data.
@@ -128,6 +278,13 @@ This glossary defines key terms used throughout the textbook. Terms are listed a
 
 ## R
 
+### RAG (Retrieval-Augmented Generation)
+**Definition**: An AI technique that combines information retrieval with text generation, allowing AI to answer questions using specific documents or knowledge bases.
+
+**Example**: This textbook's chatbot uses RAG to find relevant passages and generate accurate answers about robotics concepts.
+
+**First Introduced**: Architecture Documentation
+
 ### rclpy
 **Definition**: The Python client library for creating ROS 2 nodes and interacting with the ROS 2 ecosystem. It's the bridge between Python AI code and robot systems.
 
@@ -153,12 +310,26 @@ This glossary defines key terms used throughout the textbook. Terms are listed a
 
 **First Introduced**: Module 1, Chapter 3
 
+### Sim-to-Real Transfer
+**Definition**: The process of taking robot behaviors learned in simulation and deploying them on physical robots with minimal adjustment.
+
+**Example**: A walking policy trained in Isaac Sim can be transferred to a physical humanoid robot and work immediately without retraining.
+
+**First Introduced**: Module 3
+
 ### Subscriber
 **Definition**: A node that receives data from a topic. Subscribers listen for information that publishers send.
 
 **Example**: A leg control node subscribes to the "balance_data" topic to receive tilt measurements and adjust the humanoid's posture.
 
 **First Introduced**: Module 1, Chapter 3
+
+### Synthetic Data
+**Definition**: Artificially generated training examples created in simulation, used to train AI models without collecting real-world data.
+
+**Example**: Isaac Sim generates millions of images of robots in various poses—synthetic data that trains perception models faster than collecting real photos.
+
+**First Introduced**: Module 3
 
 ---
 
@@ -184,4 +355,33 @@ This glossary defines key terms used throughout the textbook. Terms are listed a
 
 ---
 
-*This glossary is updated as new terms are introduced in each module. Terms marked with asterisks (*) are defined in later modules.*
+## V
+
+### VLA (Vision-Language-Action)
+**Definition**: Neural networks that connect what robots see (vision), what humans say (language), and what robots do (action) into unified models.
+
+**Example**: A VLA model receives a camera image and the command "pick up the apple," then outputs the motor commands to execute the grasp.
+
+**First Introduced**: Module 4
+
+### VSLAM (Visual Simultaneous Localization and Mapping)
+**Definition**: An algorithm that simultaneously figures out where a robot is and builds a map of its surroundings using only camera images.
+
+**Example**: As a humanoid robot walks through a building, VSLAM tracks its position while creating a map of hallways and rooms—all from camera data.
+
+**First Introduced**: Module 3
+
+---
+
+## Z
+
+### Zero-Shot Deployment
+**Definition**: Deploying AI models that work immediately on new tasks without additional training or fine-tuning.
+
+**Example**: A policy trained entirely in Isaac Sim working immediately on a physical robot without any real-world practice is zero-shot deployment.
+
+**First Introduced**: Module 3
+
+---
+
+*This glossary covers key terms from all four modules. Terms are cross-referenced to help you navigate the textbook.*
