@@ -70,12 +70,22 @@ async def read_root():
 @app.get("/health", tags=["General"])
 async def health_check():
     """
-    Health check endpoint for deployment platforms.
+    Health check endpoint for deployment platforms (Hugging Face Spaces).
+    Returns 200 OK when the service is ready to accept requests.
     """
     return {
         "status": "healthy",
-        "rag_pipeline": "available" if rag_chain else "unavailable"
+        "rag_pipeline": "available" if rag_chain else "unavailable",
+        "service": "humanoid-robotics-chatbot"
     }
+
+
+@app.head("/health", tags=["General"])
+async def health_check_head():
+    """
+    HEAD request for health check (some platforms use this).
+    """
+    return None
 
 # --- Auth Endpoints ---
 
